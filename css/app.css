@@ -1,4 +1,11 @@
-/* line 1, ../sass/app.scss */
+/* line 3, ../sass/app.scss */
 div {
-  background-color: transparent;
+  background-color: #DDF;
+  font-family: verdana;
+}
+
+/* line 8, ../sass/app.scss */
+h1 {
+  font-size: 20pt;
+  color: #888;
 }

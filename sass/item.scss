@@ -1,0 +1,19 @@
+@import "common.scss";
+
+.itemdiv{
+  background-color: #EEF;
+  -webkit-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+  -moz-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+  box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+  padding: 10pt;
+}
+
+.itemname {
+  font-size: $fontsizeN;
+  color: $fontcolorN;
+}
+
+.itemdata {
+  font-size: $fontsizeD;
+  color: $fontcolorD;
+}
