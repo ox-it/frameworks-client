@@ -1,3 +1,11 @@
+@import "common.scss";
+
 div {
-  background-color: transparent;
+  background-color: #DDF;
+  font-family: verdana;
+}
+
+h1 {
+  font-size: $fontsizeH;
+  color: $fontcolorH;
 }

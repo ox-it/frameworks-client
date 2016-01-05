@@ -1,0 +1,51 @@
+@import "common.scss";
+.listdiv{
+    color:#CCC;
+    -webkit-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+    box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+    padding: 10pt;
+    margin: 10pt;
+  }
+
+  div {
+    padding: 10px;
+
+    &.listdiv {
+      color: white;
+      
+    }
+  }
+
+  div > .listdiv {
+    color: white;
+  }
+
+div {
+  background-color: #FFF;
+
+
+
+  &.listitemdiv {
+    -webkit-box-shadow: inset -8px 8px 10px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset -8px 8px 10px -10px rgba(0,0,0,0.75);
+    box-shadow: inset -8px 8px 10px -10px rgba(0,0,0,0.75);
+    background-color: #EFF;
+    padding: 10pt;
+    margin: 10pt;
+
+  }
+
+  &.listitemname {
+    font-size: $fontsizeN;
+    color: $fontcolorN;
+    a {
+      color:$fontcolorN;
+    }
+  }
+
+  &.listitemdata {
+    font-size: $fontsizeD;
+    color: $fontcolorD;
+  }
+}
