@@ -1,4 +1,5 @@
-define(['backbone', 'app/collections/ExamplesCollection', 'app/views/ExampleView'], function(Backbone, ExamplesCollection, ExampleView){
+define(['backbone', 'app/collections/ExamplesCollection', 'app/views/ExampleView', 'app/views/ListViews'],
+	function(Backbone, ExamplesCollection, ExampleView, ExampleListView){
 
 	var Router = Backbone.Router.extend({
 
@@ -13,7 +14,9 @@ define(['backbone', 'app/collections/ExamplesCollection', 'app/views/ExampleView
 		},
 
 		routes: {
-			"": "home"
+			"": "home",
+			"list": "list",
+			"items/:item": "showitem"
 		},
 
 
@@ -21,12 +24,28 @@ define(['backbone', 'app/collections/ExamplesCollection', 'app/views/ExampleView
 		home: function() {
 
 			//Example
-			var anExample = this.examples.at(0);
+			var anExample = this.examples.at(1);
 			var exampleView = new ExampleView({el:$('.example'), model:anExample});
 			exampleView.render();
 
 
 			//End Example
+		},
+		showitem: function(item) {
+
+			//Example
+
+			var anExample = this.examples.findWhere({name: item});
+			var exampleView = new ExampleView({el:$('.example'), model:anExample});
+			exampleView.render();
+
+
+			//End Example
+		},
+		list: function() {
+			var listExample = this.examples;
+			var exampleListView = new ExampleListView({el:$('.example'), collection:listExample});
+			exampleListView.render();
 		}
 
 	});
