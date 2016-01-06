@@ -9,7 +9,7 @@
     
     var platforms = [
         'ios',
-        'android'
+        'android@3.7.1'
         //add further platforms here
     ]
     
@@ -29,7 +29,7 @@
         }
 
         var device = {
-            platform: grunt.option('platform') || 'all',
+            platform: grunt.option('platform') || '',
             family: grunt.option('family') || 'default',
             target: grunt.option('target') || 'emulator'
         };
@@ -164,17 +164,17 @@
                 options: {
                     path: '.',
                     cli: 'cordova',
-                    platforms: [device.platform]
                 },
-                build: {
+                build_ios: {
                     options: {
-                        command: 'build'
+                        command: 'build',
+                        platforms: ['ios']
                     }
                 },
-                device: {
+                build_android: {
                     options: {
-                        command: 'run',
-                        args: ['--device']
+                        command: 'build',
+                        platforms: ['android']
                     }
                 },
                 ios: {
@@ -191,9 +191,16 @@
                         platforms: ['android']
                     }
                 },
-                emulate: {
+                emulate_android: {
                     options: {
-                        command: 'run'
+                        command: 'run',
+                        platforms: ['android']
+                    }
+                },
+                emulate_ios: {
+                    options: {
+                        command: 'run',
+                        platforms: ['ios']
                     }
                 },
                 add_plugins: {
@@ -212,35 +219,31 @@
                 }
             }
         });
-
-        grunt.registerTask('cordova-buildemulate', [
-	        'package',
-            'cordovacli:build',
-            'cordovacli:emulate'
-        ]);
-
-        grunt.registerTask('cordova-buildrun', [
-	        'package',
-            'cordovacli:build',
-            'cordovacli:device'
-        ]);
         
         grunt.registerTask('ios', [
             'package',
-            'cordovacli:build',
+            'cordovacli:build-ios',
             'cordovacli:ios'
         ]);
         
         grunt.registerTask('android', [
             'package',
-            'cordovacli:build',
+            'cordovacli:build_android',
             'cordovacli:android'
         ]);
-
-        grunt.registerTask('emulate', ['cordova-buildemulate']);
-
-        grunt.registerTask('device', ['cordova-buildrun']);
         
+        grunt.registerTask('ios-sim', [
+            'package',
+            'cordovacli:build_ios',
+            'cordovacli:emulate_ios'
+        ]);
+        
+        grunt.registerTask('android-sim', [
+            'package',
+            'cordovacli:build_android',
+            'cordovacli:emulate_android'
+        ]);
+
 
         grunt.registerTask('default', ['emulate']);
 
