@@ -15,6 +15,7 @@ require.config({
 	    layoutmanager: "app/libs/layoutmanager/backbone.layoutmanager",
 	    hbs: "app/libs/require-handlebars-plugin/hbs",
 		pouchdb: "app/libs/pouchdb/dist/pouchdb"
+		backbonepouch: "app/libs/backbone-pouchdb/backbone-pouch"
 	},
 	packages: [
 
