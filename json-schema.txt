@@ -1,0 +1,67 @@
+skills
+
+{
+	_id: "skill1",									// e.g. "ox:powerpoint"
+	original_id: "skill1",							// better name?
+	source_id: "RD"									// as used 
+	framework: "oxford"								
+	title: "powerpoint skills",
+	description: "learn how to present well",
+	isCustom: true,
+	category: {
+		title: "foo"
+	},
+	sortValue: 1
+}
+
+
+
+goals
+
+{
+	_id: "goal1",									//UUID
+	original_id: "goal1",							//null if a custom 
+	title: "become an expert presenter",
+	description: "blah",
+	achieved: false,								//client only
+	skills: [
+		{
+			skill_id: "skill1",
+			hours: 50
+		},
+		{
+			skill_id: "skill2",
+			hours: 20
+		}
+	],
+	isCustom: false,
+}
+
+
+activity
+
+{
+	_id: "ASDFASD-aSDFWERWE-asdttewt-sd943qka",		//auto-generated UUID
+	original_id: "activity1",						// better name?
+	title: "powerpoint skills course",
+	description: "blah",
+	start_date: "2016-01-08-1500",					//ISO 8601 with timezone - when the teaching starts
+	end_date: "2016-01-08-1700",					//TBD pending an examination of available data
+	total_hours: 2		//if not specified, infer from start_date - end_date. Not necessarily sensible for e.g. a 2-day course.
+	skills: [
+		{
+			skill_id: "skill1",
+			hours: 1								//client only?
+		},
+		{
+			skill_id: "skill2",
+			hours: 1								//client only?
+		}
+	],
+	isCustom: false,
+	
+}
+
+
+Questions:
+ - Will we use auto-generated UUIDs throughout, or use our own IDs?
