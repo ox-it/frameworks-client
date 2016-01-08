@@ -1,4 +1,14 @@
-define(['backbone', 'underscore'], function(Backbone, _) {
+define([
+			'backbone', 
+			'underscore',
+			'backbonepouch',
+			'pouchdb',
+		], function(
+			Backbone, 
+			_,
+			BackbonePouch,
+			PouchDB
+) {
 
 	var ExampleModel = Backbone.Model.extend({
 		parse: function(response) {
