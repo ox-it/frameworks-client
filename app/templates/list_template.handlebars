@@ -1,0 +1,11 @@
+<form class="ui-filterable">
+    <input id="filter-data" data-type="search" placeholder="search">
+</form>
+  <ul id="dbg" data-role="listview" data-inset="true" data-filter="true" data-input="#filter-data">
+    {{#each items}}
+      <li>
+        <span><a href="/#items?{{name}}">{{name}}</a> {{age}} <div class="notimportant">{{data}}</div></span>
+        <span><a href="/#items-accordion?{{name}}" class="ui-btn ui-icon-delete ui-btn-icon-left">accordion view</a></span>
+      </li>
+  {{/each}}
+  </ul>

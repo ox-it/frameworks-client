@@ -3,18 +3,21 @@
  */
 require.config({
 	shim: {
-
+		backbonepouch: {
+			exports: "BackbonePouch"
+		}
 	},
 	paths: {
-	    almond: "app/libs/almond/almond",
-	    backbone: "app/libs/backbone/backbone",
-	    handlebars: "app/libs/handlebars/handlebars",
-	    jquery: "app/libs/jquery/dist/jquery",
-	    requirejs: "app/libs/requirejs/require",
-	    underscore: "app/libs/underscore/underscore",
-	    layoutmanager: "app/libs/layoutmanager/backbone.layoutmanager",
-	    hbs: "app/libs/require-handlebars-plugin/hbs",
-		pouchdb: "app/libs/pouchdb/dist/pouchdb"
+		almond: "app/libs/almond/almond",
+		backbone: "app/libs/backbone/backbone",
+		handlebars: "app/libs/handlebars/handlebars",
+		jquery: "app/libs/jquery/dist/jquery",
+		requirejs: "app/libs/requirejs/require",
+		underscore: "app/libs/underscore/underscore",
+		layoutmanager: "app/libs/layoutmanager/backbone.layoutmanager",
+		hbs: "app/libs/require-handlebars-plugin/hbs",
+		pouchdb: "app/libs/pouchdb/dist/pouchdb",
+		jquerymobile: "app/libs/jquery-mobile-bower/js/jquery.mobile-1.4.5",
 		backbonepouch: "app/libs/backbone-pouchdb/backbone-pouch"
 	},
 	packages: [
@@ -29,4 +32,13 @@ require.config({
 	}
 });
 
-require(['app/main']);
+//require(['app/main']);
+
+
+require([ "jquery","backbone","app/main","jquerymobile" ], function( $, Backbone, Mobile ) {
+	$.mobile.ajaxEnabled = false
+	$.mobile.hashListeningEnabled = false
+	$.mobile.linkBindingEnabled = false
+	$.mobile.pushStateEnabled = false
+	console.log("$.mobile.hashListeningEnabled=",$.mobile.hashListeningEnabled);
+} );

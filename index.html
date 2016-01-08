@@ -30,20 +30,40 @@
         <link rel="stylesheet" type="text/css" href="css/app.css" />
         <link rel="stylesheet" type="text/css" href="css/list.css" />
         <link rel="stylesheet" type="text/css" href="css/item.css" />
+        <link rel="stylesheet" type="text/css" href="app/libs/jquery-mobile-bower/css/jquery.mobile-1.4.5.css" />
+
         <title>Hello World</title>
     </head>
     <body>
-		<div class="example"></div>
-        <script>
-            require(['app/main'], function(App) {
-	            //initialize the app
-	            App.initialize();
+      <script>
+          require(['app/main'], function(App) {
+            //initialize the app
+            App.initialize();
 
-                //send the device ready event
-	            var e = document.createEvent('Event');
-	            e.initEvent('deviceready', true, true);
-	            document.dispatchEvent(e);
-            });
-        </script>
+
+
+              //send the device ready event
+            var e = document.createEvent('Event');
+            e.initEvent('deviceready', true, true);
+            document.dispatchEvent(e);
+          });
+      </script>
+
+<div data-role="page" id="index">
+
+	<div data-role="header">
+		<h3>Page Header</h3>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+    <span class="example"></span>
+
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<h3>Page Footer</h3>
+	</div><!-- /footer -->
+
     </body>
 </html>
