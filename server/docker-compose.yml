@@ -1,0 +1,10 @@
+# This is a simple docker-compose for bringing up couchdb
+couchdb:
+  image: frodenas/couchdb
+  volumes:
+   - /data
+  environment:
+    COUCHDB_USERNAME: frameworks
+    COUCHDB_PASSWORD: frameworks
+  ports:
+   - "5984:5984"
