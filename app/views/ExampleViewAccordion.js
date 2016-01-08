@@ -1,6 +1,6 @@
 define(['backbone', 'hbs!app/templates/example_template'], function(Backbone, exampleTemplate) {
 
-	var ExampleView = Backbone.View.extend({
+	var ExampleViewAccordion = Backbone.View.extend({
 
 		template: exampleTemplate,
 

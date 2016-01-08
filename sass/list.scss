@@ -1,32 +1,22 @@
 @import "common.scss";
-.listdiv{
-    color:#CCC;
-    -webkit-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
-    -moz-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
-    box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
-    padding: 10pt;
-    margin: 10pt;
-  }
 
-  div {
-    padding: 10px;
+.notimportant{
+  font-size: 8pt; 
+}
 
-    &.listdiv {
-      color: white;
-      
+
+/*
+  .listdiv{
+      color:#CCC;
+      -webkit-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+      -moz-box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+      box-shadow: -7px 7px 29px -9px rgba(0,0,0,0.75);
+      padding: 10pt;
+      margin: 10pt;
     }
-  }
-
-  div > .listdiv {
-    color: white;
-  }
-
-div {
-  background-color: #FFF;
 
 
-
-  &.listitemdiv {
+  .listitemdiv {
     -webkit-box-shadow: inset -8px 8px 10px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: inset -8px 8px 10px -10px rgba(0,0,0,0.75);
     box-shadow: inset -8px 8px 10px -10px rgba(0,0,0,0.75);
@@ -36,7 +26,7 @@ div {
 
   }
 
-  &.listitemname {
+  .listitemname {
     font-size: $fontsizeN;
     color: $fontcolorN;
     a {
@@ -44,8 +34,8 @@ div {
     }
   }
 
-  &.listitemdata {
+  .listitemdata {
     font-size: $fontsizeD;
     color: $fontcolorD;
   }
-}
+*/

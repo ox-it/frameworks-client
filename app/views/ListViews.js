@@ -7,14 +7,19 @@ define(['backbone', 'hbs!app/templates/list_template'], function(Backbone, listT
 		initialize: function(params) {
 			//initialisation of view from params
 			this.collection = params.collection;
+
 		},
 
 		serialize: function() {
 			//serialize relevant model data to send to template
 			var data = {};
 			data.items = this.collection.toJSON();
-
 			return data;
+		},
+
+		afterRender : function() {
+			$( ".example" ).enhanceWithin();
+			console.log("after render list view");
 		},
 
 		events: {},
@@ -22,5 +27,4 @@ define(['backbone', 'hbs!app/templates/list_template'], function(Backbone, listT
 	});
 
 	return ExampleListView;
-
 });

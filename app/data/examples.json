@@ -1,10 +1,22 @@
 [
   {
-    "name": "Example1",
-    "data": "foo"
+    "name": "Bob",
+    "data": "foo everything ok",
+    "age":"88"
   },
   {
-    "name": "Example2",
-    "data": "bar"
+    "name": "Alex",
+    "data": "4",
+    "age":"58"
+  },
+  {
+    "name": "Tim",
+    "data": "10/10/2016",
+    "age":"86"
+  },
+  {
+    "name": "John",
+    "data": "test data",
+    "age":"28"
   }
 ]

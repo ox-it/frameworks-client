@@ -14,7 +14,8 @@ require.config({
 	    underscore: "app/libs/underscore/underscore",
 	    layoutmanager: "app/libs/layoutmanager/backbone.layoutmanager",
 	    hbs: "app/libs/require-handlebars-plugin/hbs",
-		pouchdb: "app/libs/pouchdb/dist/pouchdb"
+			pouchdb: "app/libs/pouchdb/dist/pouchdb",
+			jquerymobile: "app/libs/jquery-mobile-bower/js/jquery.mobile-1.4.5"
 	},
 	packages: [
 
@@ -28,4 +29,13 @@ require.config({
 	}
 });
 
-require(['app/main']);
+//require(['app/main']);
+
+
+require([ "jquery","backbone","app/main","jquerymobile" ], function( $, Backbone, Mobile ) {
+	$.mobile.ajaxEnabled = false
+	$.mobile.hashListeningEnabled = false
+	$.mobile.linkBindingEnabled = false
+	$.mobile.pushStateEnabled = false
+	console.log("$.mobile.hashListeningEnabled=",$.mobile.hashListeningEnabled);
+} );
